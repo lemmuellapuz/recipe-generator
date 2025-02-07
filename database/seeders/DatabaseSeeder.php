@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Cuisine;
-use App\Models\Intolerance;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,8 +12,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            Cuisine::class,
-            Intolerance::class,
+            CuisineSeeder::class,
+            IntoleranceSeeder::class,
         ]);
     }
 }
