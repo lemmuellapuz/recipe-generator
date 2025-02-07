@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\GenerateRecipeRequest;
-use App\Http\Resources\GeneratedRecipeResource;
+use App\Http\Requests\RecipeRequest;
+use App\Http\Resources\Recipe\RecipeResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class GenerateRecipeController extends Controller
+class RecipeController extends Controller
 {
     
-    public function __invoke(GenerateRecipeRequest $request)
+    public function __invoke(RecipeRequest $request)
     {
 
         if(!is_array($request->ingredients)) {
@@ -24,6 +24,6 @@ class GenerateRecipeController extends Controller
             'number' => 1
         ]);
         
-        return GeneratedRecipeResource::collection($response->object());
+        return RecipeResource::collection($response->object());
     }
 }
