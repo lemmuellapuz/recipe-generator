@@ -21,7 +21,7 @@ class RecipeController extends Controller
         $response = Http::get('https://api.spoonacular.com/recipes/findByIngredients', [
             'apiKey' => config('spoonacular.secret_key'),
             'ingredients' => implode(',', $request->ingredients),
-            'number' => 1
+            'number' => 10
         ]);
         
         return RecipeResource::collection($response->object());
