@@ -17,9 +17,9 @@ class GeneratedRecipeResource extends JsonResource
             'imageType' => $this->imageType,
             'usedIngredientCount' => $this->usedIngredientCount,
             'missedIngredientCount' => $this->missedIngredientCount,
-            'missedIngredients' => IngredientResource::collection($this->missedIngredients),
-            'usedIngredients' => IngredientResource::collection($this->usedIngredients),
-            'unusedIngredients' => IngredientResource::collection($this->unusedIngredients),
+            'missedIngredients' => DetailedIngredientResource::collection($this->missedIngredients),
+            'usedIngredients' => DetailedIngredientResource::collection($this->usedIngredients),
+            'unusedIngredients' => DetailedIngredientResource::collection($this->unusedIngredients),
             'likes' => $this->likes,
         ];
     }
