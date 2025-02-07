@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\InstructionRequest;
-use App\Http\Resources\InstructionResource;
+use App\Http\Resources\Instruction\InstructionResource;
 use Illuminate\Support\Facades\Http;
 
 class InstructionController extends Controller

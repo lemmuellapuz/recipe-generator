@@ -1,19 +1,18 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Instruction;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class EquipmentResource extends JsonResource
+class InstructionResource extends JsonResource
 {
     
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'image' => $this->image,
             'name' => $this->name,
+            'steps' => StepResource::collection($this->steps),
         ];
     }
 }
