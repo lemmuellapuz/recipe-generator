@@ -10,7 +10,8 @@ return [
     | This file is for storing the configuration of image recognition
     |
     */
-
-    'driver' => env('IMAGE_RECOGNITION_DRIVER', 'hugging_face'),
-    'access_token' => env('IMAGE_RECOGNITION_ACCESS_TOKEN', ''),
+    
+    'driver' => env('IMAGE_RECOGNITION_DRIVER', 'google'),
+    'api_key' => env('IMAGE_RECOGNITION_API_KEY', ''),
+    
 ];
