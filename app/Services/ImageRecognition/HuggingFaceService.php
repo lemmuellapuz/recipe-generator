@@ -14,7 +14,7 @@ class HuggingFaceService implements ImageRecognitionInterface
 
     public function __construct()
     {
-        $this->apiKey = config('huggingface.access_token');
+        $this->apiKey = config('image-recognition.access_token');
         $this->modelUrl = 'https://api-inference.huggingface.co/models/nateraw/food';
     }
 
