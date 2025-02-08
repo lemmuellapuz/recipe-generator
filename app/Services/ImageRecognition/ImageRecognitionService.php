@@ -10,7 +10,7 @@ class ImageRecognitionService
 
     public function __construct(protected ImageRecognitionInterface $interface) {}
 
-    public function analyzeImage(string $imagePath)
+    public function analyzeImage(string $imagePath) : array
     {
         return $this->interface->analyzeImage($imagePath);
     }

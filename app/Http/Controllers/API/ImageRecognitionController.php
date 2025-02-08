@@ -9,10 +9,15 @@ use Illuminate\Http\Request;
 
 class ImageRecognitionController extends Controller
 {
-    public function __construct(protected ImageRecognitionService $service) {}
 
-    public function __invoke(ImageRecognitionRequest $request)
+    public function __invoke(ImageRecognitionRequest $request, ImageRecognitionService $service)
     {
-        return $this->service->analyzeImage($request->image_path);
+        $response = $service->analyzeImage($request->image_path);
+
+        if (isset($response['error'])) {
+            return response()->json($response, 500);
+        }
+
+        return response()->json($response);
     }
 }
