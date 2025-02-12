@@ -14,10 +14,6 @@ class RecipeController extends Controller
     public function __invoke(RecipeRequest $request)
     {
 
-        if(!is_array($request->ingredients)) {
-            return response('Ingredients must be array', 400);
-        }
-
         $response = Http::get('https://api.spoonacular.com/recipes/findByIngredients', [
             'apiKey' => config('spoonacular.secret_key'),
             'ingredients' => implode(',', $request->ingredients),
